@@ -1,0 +1,111 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeställningsApp5.Views.Menu"
+             Title="Kategorier">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Din varukorg"
+            Order="Primary"
+            Priority="0" 
+            Clicked="OnVarukorgClicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="FillAndExpand" Margin="10">
+            <Label 
+                Text="Välj den kategori du är ute efter"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Button Text="Bakåt"
+        Clicked="OnBackClicked"
+        Grid.Row="2" Grid.Column="0"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start" />
+
+            <Grid 
+                RowDefinitions="200,170"
+                ColumnDefinitions="1*, 1*, 1*, 1*" 
+                Margin="0,0,0,0"
+                >
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="2"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Image 
+                        Source="mensclothing.png"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="5"></Image>
+                </StackLayout>
+                <Button Clicked="OnFiskClicked"
+                        Text="Man"
+                        Grid.Row="2" Grid.Column="0"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="2"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="womensclothing.png"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="5"></Image>
+                </StackLayout>
+                <Button Clicked="OnVegClicked"
+                        Text="Kvinna"
+                        Grid.Row="2" Grid.Column="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.RowSpan="2"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="jeweleryy.png"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="5"></Image>
+                </StackLayout>
+                <Button Clicked="OnKottClicked"
+                        Text="Juveler"
+                        Grid.Row="2" Grid.Column="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Grid.RowSpan="2"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="electronics.png"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="5"></Image>
+                </StackLayout>
+                <Button 
+                        Clicked="OnElectronicClicked"
+                        Text="Elektronik"
+                        Grid.Row="2" Grid.Column="3"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

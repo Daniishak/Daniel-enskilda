@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeställningsApp5.Views.VegMenu"
+             Title="Kvinna">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Din varukorg"
+            Order="Primary"
+            Priority="0" 
+            Clicked="OnVarukorgClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="150" WidthRequest="150" Grid.Column="0" Grid.Row="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Label Text="{Binding Id}"
+                                           FontSize="Large"
+                                           Margin="10,0,0,5" />
+                                    <Label Text="{Binding Title}"
+                               FontSize="Large"
+                               Margin="10,0,0,5" />
+                                    <Label Text="{Binding Description}"
+                               FontSize="Medium"
+                               Margin="10,0,0,0" />
+                                    <Label Text="{Binding Price, StringFormat='Price: {0} kr'}"
+                                           FontSize="Medium"
+                                           Margin="10,5,0,0" />
+                                    <Button Text="Lägg i varukorg" 
+                                            Clicked="Läggtill"
+                                            TextColor="White" 
+                                            BackgroundColor="Black" 
+                                            Margin="10,10,0,0"
+                                            Command="{Binding AddProductCommand}"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Text="Back" Clicked="OnBackButtonClicked" HeightRequest="50" WidthRequest="50" Padding="10,5" />
+
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
