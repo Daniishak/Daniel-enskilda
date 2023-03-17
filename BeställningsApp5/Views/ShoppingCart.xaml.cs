@@ -84,6 +84,6 @@ public partial class ShoppingCart : ContentPage
     {
         VarukorgSingleton.Instance.ClearItems();
         UpdateItems();
-        Navigation.PushAsync(new MainPage()); // Navigate back to MainPage
+        Navigation.PushAsync(new MainPage()); 
     }
 }
